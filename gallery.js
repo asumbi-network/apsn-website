@@ -36,6 +36,7 @@ function showSlide(index) {
     dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
 }
 
+// Auto-play
 let slideInterval = setInterval(nextSlide, 3000);
 
 function nextSlide() {
