@@ -99,38 +99,28 @@ body {
     background: #95b14c;
 }
 
-/* Section Styling */
-.section {
-    padding: 4rem 2rem;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-}
-
 /* Gallery / Slideshow Styles */
 .slideshow-container {
     position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: 2rem 0;
+    width: 100vw;
+    height: 400px;
     overflow: hidden;
-    border-radius: 8px;
-    background: #000; /* background while images load */
+    background: #000;
 }
 
 .slideshow-container img {
-    width: 100%;
-    height: 400px; /* professional standard */
-    object-fit: cover; /* crop to fit nicely */
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
     display: none;
 }
 
-/* Dots for slideshow */
+/* Dots */
 .slideshow-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
     text-align: center;
-    margin-top: 10px;
 }
 
 .slideshow-dots span {
@@ -188,6 +178,10 @@ footer {
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .slideshow-container {
+        height: 250px;
     }
 
     .slideshow-container img {
