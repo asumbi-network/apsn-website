@@ -1,110 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asumbi Professional & Social Network (APSN)</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asumbi Professional and Social Network</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="APSN Logo">
-            <span>APSN</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#folders">Folders</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="finance.html">Finance</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Welcome to APSN</h1>
-        <p>Connecting Asumbi alumni for professional and social growth.</p>
-        <a href="#folders" class="btn-primary">Explore Resources</a>
-    </header>
+  <header>
+    <h1>Welcome to APSN</h1>
+    <p>Professional and Social Network for Asumbi friends</p>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About APSN</h2>
-            <p>The Asumbi Professional and Social Network (APSN) is a community of former Asumbi primary school friends who reconnect, collaborate, and grow together professionally and socially. Our mission is to provide a hub for networking, learning, and community impact.</p>
-        </div>
+  <main>
+    <section class="gallery-section">
+      <h2>Events Gallery</h2>
+      <div class="slideshow-container" id="slideshow">
+        <!-- Images injected by gallery.js -->
+      </div>
     </section>
+  </main>
 
-    <!-- Folders Section -->
-    <section id="folders" class="section bg-light">
-        <div class="container">
-            <h2>Folder Overview</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Administration & Governance</h3>
-                    <p>Core documents: constitution, leadership records, meeting minutes.</p>
-                    <a href="#" class="btn-secondary">GitHub</a>
-                    <a href="#" class="btn-secondary">Drive</a>
-                </div>
-                <div class="card">
-                    <h3>Membership & Communication</h3>
-                    <p>Member directory, newsletters, and communications.</p>
-                    <a href="#" class="btn-secondary">GitHub</a>
-                    <a href="#" class="btn-secondary">Drive</a>
-                </div>
-                <div class="card">
-                    <h3>Projects & Initiatives</h3>
-                    <p>Active and completed community projects.</p>
-                    <a href="#" class="btn-secondary">GitHub</a>
-                    <a href="#" class="btn-secondary">Drive</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <p>© 2025 APSN. All rights reserved.</p>
+  </footer>
 
-    <!-- Events Section -->
-    <section id="events" class="section">
-        <div class="container">
-            <h2>Events</h2>
-            <p>Photos, reports, and media from past reunions, workshops, and networking events. We celebrate achievements and keep members informed of upcoming events.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
-        <div class="container">
-            <h2>Contact & Support</h2>
-            <p>If you have questions, need access, or want to contribute, reach out:</p>
-            <ul>
-                <li>Email: <a href="mailto:asumbi.network@gmail.com">asumbi.network@gmail.com</a></li>
-                <li>WhatsApp Group: “Asumbi Professional & Social Network”</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Asumbi Professional & Social Network (APSN). All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Hamburger menu toggle for mobile
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-            hamburger.classList.toggle('toggle');
-        });
-    </script>
-
+  <script src="gallery.js"></script>
 </body>
 </html>
