@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asumbi Professional and Social Network</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APSN Home</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="finance.html">Finance</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="contact.html">Contact</a></li>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="images/logo.png" alt="APSN Logo">
+        <span>APSN</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="folders.html">Folders</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
 
-  <header>
+<!-- Hero Section -->
+<header class="hero">
     <h1>Welcome to APSN</h1>
-    <p>Professional and Social Network for Asumbi friends</p>
-  </header>
+    <p>Connecting Asumbi alumni for professional and social growth.</p>
+    <a href="folders.html" class="btn-primary">Explore Resources</a>
+</header>
 
-  <main>
-    <section class="gallery-section">
-      <h2>Events Gallery</h2>
-      <div class="slideshow-container" id="slideshow">
-        <!-- Images injected by gallery.js -->
-      </div>
-    </section>
-  </main>
+<!-- Gallery Section -->
+<section class="section gallery-section">
+    <div class="container">
+        <h2>Events Gallery</h2>
+        <div class="slideshow-container" id="slideshow">
+            <!-- Images will be injected via gallery.js -->
+        </div>
+    </div>
+</section>
 
-  <footer>
-    <p>© 2025 APSN. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+<p>© 2025 Asumbi Professional & Social Network (APSN). All rights reserved.</p>
+</footer>
 
-  <script src="gallery.js"></script>
+<!-- Scripts -->
+<script src="hamburger.js"></script>
+<script src="gallery.js"></script>
+
 </body>
 </html>
