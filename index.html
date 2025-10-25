@@ -21,6 +21,11 @@
             <li><a href="#events">Events</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -89,6 +94,17 @@
     <footer>
         <p>© 2025 Asumbi Professional & Social Network (APSN). All rights reserved.</p>
     </footer>
+
+    <script>
+        // Hamburger menu toggle for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
+        });
+    </script>
 
 </body>
 </html>
