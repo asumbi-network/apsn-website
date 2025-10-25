@@ -9,7 +9,7 @@ const container = document.getElementById("slideshow");
 const dotsContainer = document.getElementById("slideshow-dots");
 
 // Add images
-images.forEach((src) => {
+images.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
     container.insertBefore(img, dotsContainer);
@@ -30,12 +30,16 @@ let slides = container.querySelectorAll("img");
 let dots = dotsContainer.querySelectorAll("span");
 let currentIndex = 0;
 
+// Show slide
 function showSlide(index) {
-    slides.forEach((img, i) => img.style.display = i === index ? "block" : "none");
+    slides.forEach((img, i) => {
+        img.style.display = i === index ? "block" : "none";
+        img.style.opacity = i === index ? "1" : "0";
+    });
     dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
 }
 
-// Auto-play
+// Autoplay
 let slideInterval = setInterval(nextSlide, 3000);
 
 function nextSlide() {
