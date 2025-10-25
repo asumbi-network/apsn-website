@@ -1,4 +1,4 @@
-// List of images in the folder (update automatically via sync)
+// List of images (update as needed)
 const images = [
   "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0006.jpg",
   "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0007.jpg",
@@ -8,24 +8,45 @@ const images = [
 ];
 
 const container = document.getElementById("slideshow");
-images.forEach(src => {
+const dotsContainer = document.createElement("div");
+dotsContainer.className = "slideshow-dots";
+container.after(dotsContainer);
+
+images.forEach((src, index) => {
   const img = document.createElement("img");
   img.src = src;
   container.appendChild(img);
+
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    showSlide(currentIndex);
+    resetInterval();
+  });
+  dotsContainer.appendChild(dot);
 });
 
+let slides = container.querySelectorAll("img");
+let dots = dotsContainer.querySelectorAll("span");
 let currentIndex = 0;
-const slides = container.querySelectorAll("img");
 
 function showSlide(index) {
   slides.forEach((img, i) => img.style.display = i === index ? "block" : "none");
+  dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+}
+
+// Auto-play every 3 seconds
+let slideInterval = setInterval(nextSlide, 3000);
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length; // infinite loop
+  showSlide(currentIndex);
+}
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 3000);
 }
 
 // Initial display
 showSlide(currentIndex);
-
-// Auto-play every 3 seconds
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}, 3000);
