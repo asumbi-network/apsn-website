@@ -5,58 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asumbi Professional & Social Network (APSN)</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="APSN Logo" class="logo">
-        <h1>Asumbi Professional & Social Network (APSN)</h1>
-        <p>Connecting Asumbi alumni for collaboration, mentorship, and community growth</p>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="APSN Logo">
+            <span>APSN</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#folders">Folders</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to APSN</h1>
+        <p>Connecting Asumbi alumni for professional and social growth.</p>
+        <a href="#folders" class="btn-primary">Explore Resources</a>
     </header>
 
-    <section id="about">
-        <h2>About APSN</h2>
-        <p>APSN is a network of Asumbi primary school friends reconnecting and building together professionally and socially.</p>
-    </section>
-
-    <section id="folders">
-        <h2>Folder Overview & Links</h2>
-        <div class="card-container">
-
-            <div class="card">
-                <h3>Administration & Governance</h3>
-                <p>Core documents: constitution, leadership records, meeting minutes.</p>
-                <a href="https://github.com/asumbi-network/apsn_drive_sync/tree/main/drive_backup/Administration%20&%20Governance" target="_blank">View in GitHub</a>
-                <a href="https://drive.google.com/drive/folders/1V0FyBdKQDyM8v6lk3gQ0fby3d2VZvBSE" target="_blank">View in Drive</a>
-            </div>
-
-            <div class="card">
-                <h3>Membership & Communication</h3>
-                <p>Member directory, newsletters, and communication materials.</p>
-                <a href="https://github.com/asumbi-network/apsn_drive_sync/tree/main/drive_backup/Membership%20&%20Communication" target="_blank">GitHub</a>
-                <a href="https://drive.google.com/drive/folders/1V0FyBdKQDyM8v6lk3gQ0fby3d2VZvBSE" target="_blank">Drive</a>
-            </div>
-
-            <div class="card">
-                <h3>Projects & Initiatives</h3>
-                <p>Active and completed community projects.</p>
-                <a href="https://github.com/asumbi-network/apsn_drive_sync/tree/main/drive_backup/Projects%20&%20Initiatives" target="_blank">GitHub</a>
-                <a href="https://drive.google.com/drive/folders/1V0FyBdKQDyM8v6lk3gQ0fby3d2VZvBSE" target="_blank">Drive</a>
-            </div>
-
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About APSN</h2>
+            <p>The Asumbi Professional and Social Network (APSN) is a community of former Asumbi primary school friends who reconnect, collaborate, and grow together professionally and socially. Our mission is to provide a hub for networking, learning, and community impact.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact & Support</h2>
-        <p>If you have questions or need access:</p>
-        <ul>
-            <li>Email: <a href="mailto:asumbi.network@gmail.com">asumbi.network@gmail.com</a></li>
-            <li>WhatsApp Group: “Asumbi Professional & Social Network”</li>
-        </ul>
+    <!-- Folders Section -->
+    <section id="folders" class="section bg-light">
+        <div class="container">
+            <h2>Folder Overview</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Administration & Governance</h3>
+                    <p>Core documents: constitution, leadership records, meeting minutes.</p>
+                    <a href="#" class="btn-secondary">GitHub</a>
+                    <a href="#" class="btn-secondary">Drive</a>
+                </div>
+                <div class="card">
+                    <h3>Membership & Communication</h3>
+                    <p>Member directory, newsletters, and communications.</p>
+                    <a href="#" class="btn-secondary">GitHub</a>
+                    <a href="#" class="btn-secondary">Drive</a>
+                </div>
+                <div class="card">
+                    <h3>Projects & Initiatives</h3>
+                    <p>Active and completed community projects.</p>
+                    <a href="#" class="btn-secondary">GitHub</a>
+                    <a href="#" class="btn-secondary">Drive</a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2>Events</h2>
+            <p>Photos, reports, and media from past reunions, workshops, and networking events. We celebrate achievements and keep members informed of upcoming events.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2>Contact & Support</h2>
+            <p>If you have questions, need access, or want to contribute, reach out:</p>
+            <ul>
+                <li>Email: <a href="mailto:asumbi.network@gmail.com">asumbi.network@gmail.com</a></li>
+                <li>WhatsApp Group: “Asumbi Professional & Social Network”</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Asumbi Professional & Social Network (APSN). All rights reserved.</p>
     </footer>
+
 </body>
 </html>
