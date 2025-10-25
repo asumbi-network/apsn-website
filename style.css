@@ -1,11 +1,17 @@
-/* Base styles */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Base Reset */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
-    color: #333;
-    background: #f9f9f9;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    background: #f9f9f9;
+    color: #333;
 }
 
 /* Navbar */
@@ -99,17 +105,17 @@ body {
     background: #95b14c;
 }
 
-/* Gallery / Slideshow Styles */
+/* Slideshow */
 .slideshow-container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 400px;
     overflow: hidden;
     background: #000;
 }
 
 .slideshow-container img {
-    width: 100vw;
+    width: 100%;
     height: 400px;
     object-fit: cover;
     display: none;
