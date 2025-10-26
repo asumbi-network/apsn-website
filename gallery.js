@@ -3,6 +3,16 @@ const images = [
   "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0007.jpg",
   "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0008.jpg",
   "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0009.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0006.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0007.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0008.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA0009.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251025-WA00010.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20250929-WA0004.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20250930-WA00025.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20250930-WA00027.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251001-WA0003.jpg"
+  "drive_backup/Events/Photos & Media/2025_Test/IMG-20251015-WA0036.jpg"  
 ];
 
 const container = document.getElementById("slideshow");
