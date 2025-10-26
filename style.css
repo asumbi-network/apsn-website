@@ -1,14 +1,15 @@
+/* Greens */
 :root {
-  --primary: #1f1f1f;
-  --accent: #00bfa5;
-  --text: #e0e0e0;
-  --background: #121212;
+  --primary: #2d6a4f;
+  --accent: #a7c957;
+  --text: #1b4332;
+  --background: #f8faf9;
 }
 
-body { background: var(--background); color: var(--text); }
+/* Apply */
 .navbar { background: var(--primary); }
-.btn-primary { background: var(--accent); color: #fff; }
-.hero { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+.btn-primary { background: var(--accent); color: var(--primary); }
+.hero { background: linear-gradient(135deg, var(--primary), #40916c); }
 footer { background: var(--primary); }
 
 
