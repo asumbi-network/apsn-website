@@ -1,17 +1,14 @@
-/* =========================
-   APSN – HERITAGE GREEN THEME
-   ========================= */
-
 :root {
-  --primary: #8b4513;
-  --accent: #f0a04b;
-  --text: #2c1810;
-  --background: #fdf8f2;
+  --primary: #1f1f1f;
+  --accent: #00bfa5;
+  --text: #e0e0e0;
+  --background: #121212;
 }
 
+body { background: var(--background); color: var(--text); }
 .navbar { background: var(--primary); }
-.btn-primary { background: var(--accent); color: var(--primary); }
-.hero { background: linear-gradient(135deg, #8b4513, #c37e4f); }
+.btn-primary { background: var(--accent); color: #fff; }
+.hero { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
 footer { background: var(--primary); }
 
 
