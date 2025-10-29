@@ -25,17 +25,21 @@ function encodePath(path) {
 }
 
 // Add images to container
-images.forEach(src => {
+images.forEach((src, index) => {
   const img = document.createElement("img");
   img.src = encodePath(src);
   img.style.display = "none"; // hide initially
+  img.alt = `Photo from APSN event ${index + 1}`;
   container.appendChild(img);
 });
 
 // Add dots
 images.forEach((_, index) => {
   const dot = document.createElement("span");
-  dot.classList.add("dot"); // optional for styling
+  dot.classList.add("dot");
+  dot.setAttribute("role", "tab");
+  dot.setAttribute("aria-label", `Slide ${index + 1}`);
+  dot.setAttribute("aria-selected", index === 0 ? "true" : "false");
   dot.addEventListener("click", () => {
     currentIndex = index;
     showSlide(currentIndex);
@@ -51,7 +55,10 @@ let dots = dotsContainer.querySelectorAll("span");
 // Show a specific slide
 function showSlide(index) {
   slides.forEach((img, i) => img.style.display = i === index ? "block" : "none");
-  dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+    dot.setAttribute("aria-selected", i === index ? "true" : "false");
+  });
 }
 
 // Move to next slide
@@ -69,3 +76,25 @@ function resetInterval() {
 // Start slideshow
 showSlide(currentIndex);
 slideInterval = setInterval(nextSlide, 3000);
+
+// Keyboard navigation
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+    resetInterval();
+  } else if (event.key === "ArrowRight") {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+    resetInterval();
+  }
+});
+
+// Pause slideshow on hover
+container.addEventListener("mouseenter", () => {
+  clearInterval(slideInterval);
+});
+
+container.addEventListener("mouseleave", () => {
+  slideInterval = setInterval(nextSlide, 3000);
+});

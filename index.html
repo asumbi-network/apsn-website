@@ -4,12 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>APSN - Asumbi Professional & Social Network</title>
+  <meta name="description" content="The Asumbi Professional and Social Network (APSN) brings together professionals who share a common heritage. We reconnect, empower, and grow together through collaboration and mentorship." />
+  <meta name="keywords" content="APSN, Asumbi, professional network, social network, community, networking, mentorship" />
+  <meta name="author" content="Asumbi Professional & Social Network" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asumbi-network.github.io/apsn-website/" />
+  <meta property="og:title" content="APSN - Asumbi Professional & Social Network" />
+  <meta property="og:description" content="A space where we reconnect, empower, grow, and build a shared future." />
+  <meta property="og:image" content="images/logo.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://asumbi-network.github.io/apsn-website/" />
+  <meta property="twitter:title" content="APSN - Asumbi Professional & Social Network" />
+  <meta property="twitter:description" content="A space where we reconnect, empower, grow, and build a shared future." />
+  <meta property="twitter:image" content="images/logo.png" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#2d6a4f" />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="logo">
       <img src="images/IMG-20251025-WA0018.jpg" alt="APSN Logo" />
       <span>APSN</span>
@@ -21,12 +45,15 @@
       <li><a href="#events">Events</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="hamburger">
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
+
+  <!-- Main content -->
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
@@ -36,9 +63,9 @@
   </section>
 
   <!-- Slideshow Section -->
-  <section id="slideshow-section" class="section">
-    <div class="slideshow-container" id="slideshow">
-      <div class="slideshow-dots" id="slideshow-dots"></div>
+  <section id="slideshow-section" class="section" aria-label="Photo gallery">
+    <div class="slideshow-container" id="slideshow" role="region" aria-live="polite">
+      <div class="slideshow-dots" id="slideshow-dots" role="tablist" aria-label="Slideshow navigation"></div>
     </div>
   </section>
 
@@ -107,8 +134,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 Asumbi Professional & Social Network (APSN). All rights reserved.</p>
   </footer>
 
