@@ -77,8 +77,37 @@ function resetInterval() {
 showSlide(currentIndex);
 slideInterval = setInterval(nextSlide, 3000);
 
-// Keyboard navigation
+// Mark container as loaded when first image loads
+if (slides.length > 0) {
+  slides[0].addEventListener("load", () => {
+    container.classList.add("loaded");
+  });
+}
+
+// Keyboard navigation - only when slideshow is focused
+let slideshowFocused = false;
+
+container.addEventListener("mouseenter", () => {
+  slideshowFocused = true;
+  clearInterval(slideInterval);
+});
+
+container.addEventListener("mouseleave", () => {
+  slideshowFocused = false;
+  slideInterval = setInterval(nextSlide, 3000);
+});
+
+container.addEventListener("focusin", () => {
+  slideshowFocused = true;
+});
+
+container.addEventListener("focusout", () => {
+  slideshowFocused = false;
+});
+
 document.addEventListener("keydown", (event) => {
+  if (!slideshowFocused) return;
+  
   if (event.key === "ArrowLeft") {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     showSlide(currentIndex);
@@ -88,13 +117,4 @@ document.addEventListener("keydown", (event) => {
     showSlide(currentIndex);
     resetInterval();
   }
-});
-
-// Pause slideshow on hover
-container.addEventListener("mouseenter", () => {
-  clearInterval(slideInterval);
-});
-
-container.addEventListener("mouseleave", () => {
-  slideInterval = setInterval(nextSlide, 3000);
 });
