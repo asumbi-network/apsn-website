@@ -1,0 +1,38 @@
+```yaml
+name: Daily Analytics Aggregation
+on:
+  schedule:
+    - cron: '0 0 * * *' # daily UTC midnight
+  workflow_dispatch:
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Fetch analytics logs
+        env:
+          ANALYTICS_LOG_URL: ${{ secrets.ANALYTICS_LOG_URL }} # URL to fetch raw logs (S3, Cloudflare worker endpoint, etc.)
+          ANALYTICS_API_KEY: ${{ secrets.ANALYTICS_API_KEY }}
+        run: |
+          python3 scripts/fetch_logs.py --out raw_logs.jsonl
+
+      - name: Aggregate analytics
+        run: |
+          python3 scripts/process_analytics.py raw_logs.jsonl reports/analytics-$(date +%F).md
+
+      - name: Commit report
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Daily analytics report: $(date +%F)"
+          file_pattern: "reports/analytics-*.md"
+          branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
