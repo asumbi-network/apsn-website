@@ -1,4 +1,3 @@
-```yaml
 name: Daily Analytics Aggregation
 on:
   schedule:
@@ -12,17 +11,31 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Fetch analytics logs
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip google-api-python-client google-auth
+
+      - name: Prepare service account key
         env:
-          ANALYTICS_LOG_URL: ${{ secrets.ANALYTICS_LOG_URL }} # URL to fetch raw logs (S3, Cloudflare worker endpoint, etc.)
-          ANALYTICS_API_KEY: ${{ secrets.ANALYTICS_API_KEY }}
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
         run: |
-          python3 scripts/fetch_logs.py --out raw_logs.jsonl
+          if [ -z "$GCP_SA_KEY_JSON" ]; then
+            echo "GCP_SA_KEY_JSON secret is required"; exit 1
+          fi
+          echo "$GCP_SA_KEY_JSON" > sa-key.json
+          export GCP_SA_KEY_JSON_FILE=sa-key.json
+
+      - name: Fetch logs from Drive
+        env:
+          ANALYTICS_DRIVE_FOLDER_ID: ${{ secrets.ANALYTICS_DRIVE_FOLDER_ID }}
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+          OUTPUT_FILE: raw_logs.jsonl
+        run: |
+          python3 scripts/fetch_logs.py
 
       - name: Aggregate analytics
         run: |
